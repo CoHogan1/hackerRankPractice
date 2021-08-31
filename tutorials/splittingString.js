@@ -9,16 +9,14 @@ let string = `111fdhlaksjhf alksjdlhfakj laksjdfhl 222asjdhf aslaks hflskj alksf
 
 
 function splitting(string){
-    let copy = string.substr()
-
+    // edit character limit here.
     let maxChar = 130
-
-    let len = Math.ceil(string.length / maxChar)
 
     if (string.length < maxChar){
         return string
     }
-
+    let copy = string.substr()
+    let len = Math.ceil(string.length / maxChar)
     let response = []
 
     for (let i = 0; i < len; i++) {
