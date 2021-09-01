@@ -8,13 +8,19 @@ let pm = "01:20:10PM"
 
 let am = "01:01:00AM"
 
+let am2 = "12:01:00AM"
+
 
 
 function convert(s){
 
     if (s.includes('AM')){
         let militaryTime = s.slice(0, -2)
-        militaryTime.replace('12','00')
+        if (militaryTime.charAt(0) === '1' && militaryTime.charAt(1) === '2'){
+            let mt = militaryTime.replace('12','00')
+            console.log(mt)
+            return mt
+        }
         console.log(militaryTime)
         return militaryTime
     }
@@ -32,11 +38,14 @@ function convert(s){
 }
 
 
-convert(pm)
-console.log("pm");
-convert(am)
-console.log("am");
-convert(noon)
-console.log("noon");
-convert(midnight)
-console.log('midnight');
+// convert(pm)
+// console.log("pm");
+// convert(am)
+// console.log("am");
+// convert(noon)
+// console.log("noon");
+// convert(midnight)
+// console.log('midnight');
+// convert(am2) //
+convert("12:42:00AM")
+convert("12:45:54PM")

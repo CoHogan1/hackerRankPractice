@@ -17,8 +17,25 @@ let codes = [5, 'bob', 'win', 'hello', 6]
 
 
 function compare(nums, text){
+    // convert codes into numbers
+    let codesToInt = []
+    codes.forEach((item, index)=>{
+        if (typeof item === 'number'){
+            console.log(item, 'number')
+            codesToInt.push(item)
+        }
+        if (typeof item === 'string'){
+            console.log(item, "string");
+            let data = item.split('')
+            data.map(unit =>{
+                console.log(unit)
+
+            })
+        }
+    })
 
 
+    console.log(codesToInt)
 }
 
 
