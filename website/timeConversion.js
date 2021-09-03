@@ -31,21 +31,18 @@ function convert(s){
         // get the first 2 strings- the hour.
         let hour = (militaryTime.slice(0, 2))
         // add 12 to conver hour to military time.
-        let intHour = parseInt(hour) + 12
+        let intHour
+        if (militaryTime.charAt(0) === '1' && militaryTime.charAt(1) === '2'){
+            intHour = parseInt(hour)
+        } else {
+            intHour = parseInt(hour) + 12
+        }
+
+
         console.log(`${intHour}${militaryTime.slice(2, militaryTime.length)}`)
         return `${intHour}${militaryTime.slice(2, militaryTime.length)}`
     }
 }
 
 
-// convert(pm)
-// console.log("pm");
-// convert(am)
-// console.log("am");
-// convert(noon)
-// console.log("noon");
-// convert(midnight)
-// console.log('midnight');
-// convert(am2) //
-convert("12:42:00AM")
 convert("12:45:54PM")
