@@ -6,33 +6,48 @@
 
 
 let arr = [1,2,3,4,3,2,1]
+let arr2 = [0,0,1,2,2]
 
 function lonelyInteger(a){
-    let occurs = {}
+    const memory = {}
 
-    a.forEach(item =>{
-        // pops object
-        occurs[item] = 1
-    })
+    for (const int of a){
+        memory[int] = (memory[int] || 0) + 1
+    }
+    console.log(memory);
 
-    a.forEach(item =>{
-        if (item in Object.keys(occurs)){
-            occurs[item] += 1
-
+    for (const [key, value] of Object.entries(memory)){
+        if(value === 1){
+            console.log(key)
+            return key
         }
-    })
-
-
-
-
-
-    console.log(occurs)
+    }
 }
 
-lonelyInteger(arr)
+lonelyInteger(arr2)
 
 
 // if (item in Object.keys(occurs)) {
 //     console.log("yup");
 //     occurs[item] += 1
+// }
+
+
+// a.forEach(item =>{
+//     // pops object
+//     occurs[item] = 1
+// })
+//
+// a.forEach(item =>{
+//     if (item in Object.keys(occurs)){
+//         occurs[item] += 1
+//
+//     }
+// })
+// for (const [key, value] of Object.entries(occurs)){
+//     if (key === 1){
+//         console.log(key)
+//         return key
+//     }
+//
 // }

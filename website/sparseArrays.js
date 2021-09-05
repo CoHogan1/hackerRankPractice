@@ -54,7 +54,7 @@ function secondTry(strings, queries){
     for (const string of strings){
         memory[string] = (memory[string] || 0) + 1
     }
-
+    //console.log(queries.map(query => memory[query] || 0));
     return queries.map(query => memory[query] || 0)
 }
 
