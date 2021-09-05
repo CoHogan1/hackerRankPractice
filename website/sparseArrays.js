@@ -22,10 +22,9 @@ let testStr = ['abcde','sdaklfj','asdjf','na','basdn','sdaklfj','asdjf','na','as
 
 let testQue = ['abcde','sdaklfj','asdjf','na','basdn',]
 
-
 function matchingStrings(strings, queries){
-
     let answer = {}
+    let numbers = []
     queries.forEach(item =>{
         answer[item] = 0
     })
@@ -39,9 +38,24 @@ function matchingStrings(strings, queries){
     })
 
     for (const [key, value] of Object.entries(answer)){
-        console.log(value);
+        numbers.push(value)
     }
+    console.log(numbers)
+    return numbers
 }
 
 
-matchingStrings(testStr, testQue)
+//matchingStrings(testStr, testQue)
+
+
+
+function secondTry(strings, queries){
+    const memory = {}
+    for (const string of strings){
+        memory[string] = (memory[string] || 0) + 1
+    }
+
+    return queries.map(query => memory[query] || 0)
+}
+
+secondTry(testStr, testQue)
