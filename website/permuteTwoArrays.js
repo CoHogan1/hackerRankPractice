@@ -17,7 +17,7 @@ function twoArrays(k, A, B){
         }
 
     })
-    console.log('yes', "k");
+    console.log('yes');
     return 'yes'
 }
 
