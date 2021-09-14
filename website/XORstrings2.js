@@ -22,8 +22,3 @@ function string_xor(one, two){
 }
 
 string_xor(test,test2)
-// if(one[i] === two[i]){
-//     answer += '0'
-// } else {
-//     answer += '1'
-// }
