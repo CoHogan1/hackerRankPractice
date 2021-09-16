@@ -1,5 +1,3 @@
-// book model = {0:1} {2:3} {4:5} {6:7}
-
 // { 0: 1}  /1
 // { 2: 3}  /2
 // { 4: 5}  /3
@@ -17,19 +15,16 @@ let pa = 16
 let nu = 7
 
 function pageTurner(n, p){
-    if (n % 2 === 0){
-        console.log((n * 2) - 2)
-    } else {
-        console.log((n + 1) / 2)
-    }
+    // if (n % 2 === 0){
+    //     console.log((n * 2) - 2)
+    // } else {
+    //     console.log((n + 1) / 2)
+    // }
+    let frontFlip = Math.floor(p/2);
+    let backFlip = Math.floor((n/2)-frontFlip);
+
+    let result = Math.min(frontFlip, backFlip);
+    return result;
 }
 
-pageTurner(nu, pa)
-
-
-let x = "aaaaaabbbccccaaaaddf"
-
-
-let y = Array.from(new Set(x.split(','))).toString()
-
-console.log(y);
+pageTurner(2, 6)

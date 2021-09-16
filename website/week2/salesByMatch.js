@@ -13,8 +13,19 @@ let car = [10, 20, 20, 10, 10, 30, 50, 10, 20]
 let gg= [4 ,5, 5 ,5, 6, 6, 4, 1, 4, 4, 3, 6, 6 ,3, 6, 1, 4, 5 ,5 ,5]
 
 function sockMerchant(n, ar){
+    if(!ar || ar.length !== n){ return 0}
+
     let pairs = 0
-    let sorted = ar.sort()
+    let memo = {}
+    for(let num of ar){
+        memo[num] = memo[num] + 1 || 1
+    }
+    for(let num of ar){
+        memo[num] = memo[num] % 2 === 0
+        pairs += memo[num]
+    }
+    return pairs
+
 
     // sorted.forEach((item,index)=>{
     //     console.log(sorted, index);
@@ -32,9 +43,9 @@ function sockMerchant(n, ar){
         } else {
             sorted.shift()
         }
+        console.log(sorted);
     }
-    console.log(pairs)
-    return pairs
+
 }
 
 sockMerchant(test, gg)
