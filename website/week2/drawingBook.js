@@ -1,11 +1,11 @@
-// { 0: 1}  /1
-// { 2: 3}  /2
-// { 4: 5}  /3
-// { 6: 7}  /4
-// { 8: 9}  /5
-// {10:11}  /6    == (page + 1) / 2  for odd num
-// {12:13}  /7    == (page * 2) - 2  for even num
-// {14:15}  /8
+// { 0: 1}  /0
+// { 2: 3}  /1
+// { 4: 5}  /2
+// { 6: 7}  /3
+// { 8: 9}  /4
+// {10:11}  /5    == page even return even * 2
+// {12:13}  /6    == page odd return (odd * 2) - 1
+// {14:15}  /7
 
 // n number of pages in book
 // p page number to turn to
@@ -24,6 +24,7 @@ function pageTurner(n, p){
     let backFlip = Math.floor((n/2)-frontFlip);
 
     let result = Math.min(frontFlip, backFlip);
+    console.log(result);
     return result;
 }
 
