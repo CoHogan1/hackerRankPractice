@@ -14,25 +14,24 @@ let alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n
 
 let test = `There's-is-a-starman-waiting-in-the-sky`
 
-let sample = 'Middle-outz'
+let sample = 'middle-Outz'
 
 function cesarCypher(s, k){
     function isUpper(str){
-        // test if character isUpperCase
         return !/[a-z]/.test(str) && /[A-Z]/.test(str)
     }
+
     let answer = []
     let alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
       'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
     let sample = s.split('')
+    let upperCaseIndex
 
     sample.forEach((elem, index) =>{
-        // let slicer = 0
-        // if(isUpper(elem)){
-        //     slicer = alpha.indexOf(elem.toLowerCase())
-        //     console.log(slicer)
-        // }
+        if (isUpper(elem)){
+            upperCaseIndex = index
+        }
         let converted = alpha.indexOf(elem.toLowerCase())
         if ((converted + k) >= 25 ) {
             converted = converted - 25
@@ -43,17 +42,10 @@ function cesarCypher(s, k){
             answer.push(alpha[converted + k])
         }
     })
+    answer[upperCaseIndex] = answer[upperCaseIndex].toUpperCase()
     console.log(answer.join(''))
     return answer.join('')
 }
 
 cesarCypher(sample, 2)
 cesarCypher(test, 3)
-
-
-// function isUpper(str){
-//     // test if character isUpperCase
-//     return !/[a-z]/.test(str) && /[A-Z]/.test(str)
-// }
-//
-// console.log(isUpper(one));
