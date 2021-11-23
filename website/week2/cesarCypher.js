@@ -33,9 +33,9 @@ function cesarCypher(s, k){
             upperCaseIndex = index
         }
         let converted = alpha.indexOf(elem.toLowerCase())
-        if ((converted + k) >= 25 ) {
+        if ((converted + k) > 24 ) {
             converted = converted - 25
-            answer.push(alpha[converted])
+            answer.push(alpha[converted + k -1])
         } else if ( converted === -1 ) {
             answer.push('-')
         } else {

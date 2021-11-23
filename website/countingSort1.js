@@ -13,25 +13,15 @@ let sample2 = uggg.split(' ')
 let sample = [1,1,3,2,1]
 
 function  countingSort(arr){
-    // this works, but I'm not happy with it...
     let memo = []
-
     arr.forEach((item, index)=>{
-        if (index === 100){
-            return
-        }
         memo[index] = 0
     })
-
-    arr.forEach((item,index)=>{
-        if (index === 100){
-            return
-        }
+    console.log(memo)
+    arr.forEach((item, index)=>{
         memo[item]++
     })
-
-    console.log(memo)
-    return memo
+    return memo.slice(0, 100)// dur de dur
 }
 
 
