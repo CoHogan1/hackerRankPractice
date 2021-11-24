@@ -7,21 +7,36 @@ let cho = [4,1,2,3,5,6,7,8]
 
 function minimumBribes(q) {
     let bribes = 0
-    for (let i = 0; i < q.length; i++) {
-        if (q[i] - (i + 1) > 2){
-            console.log("Too chaotic")
+    q.forEach((item, index)=>{
+        if (item - (item + 1) > 2){
+            console.log("Too chaotic");
             return "Too chaotic"
         }
-        for (let j = 0; j < i; j++) {
-            if (q[j] > q[i]){
-                bribes++
-            }
+    })
+    q.forEach((item,index) =>{
+        if(q[index] > q[index + 1]){
+            console.log(item, q[index], q[index + 1], " comparison")
+            bribes++
         }
-    }
 
-    console.log(bribes)
+    })
+    console.log(bribes, " here ")
     return bribes
 }
 
-minimumBribes(tes)
-minimumBribes(cho)
+// minimumBribes(tes)
+// minimumBribes(cho)
+//minimumBribes([2,1,5,3,4]) // 3 too chao
+
+
+function test(arr){
+    let copy = [...arr].sort()
+
+
+    arr.forEach((item, index)=>{
+        let comp = arr.sort().indexOf(item)
+        console.log(comp);
+    })
+}
+
+test([2,1,5,3,4])

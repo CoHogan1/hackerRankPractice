@@ -109,18 +109,21 @@ let alp = [
 
 let str = "middle-Outz" // "okffng-Qwvb"
 let srt2 = `There's-is-a-starman-waiting-in-the-sky`
+let newString = "Hello_World!"
 let t = 2
+let ggg = 'www.abc.xy'
 
 function caesarCipher(s, k) {
+    let specialChars = /\W|_/g
     let capsIndex = []
     let answer = []
     s.split('').map((item, index)=>{
-        if (item === item.toUpperCase() && item !== '-'){
+        if (item === item.toUpperCase() && item !== specialChars){ // changed this also.
             capsIndex.push(index)
         }
         let ans = alp.indexOf(item.toLowerCase())
         if (ans === -1){
-            answer.push('-')
+            answer.push(item)// changed this
         } else {
             answer.push(alp[ans + k])
         }
@@ -134,6 +137,7 @@ function caesarCipher(s, k) {
 }
 
 //caesarCipher(str, 2)
+caesarCipher(ggg, 9)
 
 
 
