@@ -146,4 +146,4 @@ const alpha = Array.from(Array(26)).map((e, i) => i + 65);
 const alphabet = alpha.map((x) => String.fromCharCode(x).toLowerCase());
 
 
-//console.log(String.fromCharCode(65), " here");
+console.log(String.fromCharCode(65), " here");
