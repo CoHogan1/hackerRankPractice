@@ -247,17 +247,18 @@ func(str2, 3)
 
 
 function isBalanced(s) {
-    let mid = Math.ceil(s.length / 2)
-    let secHalf = s.slice(mid)
-    let reversed = secHalf.split('').reduce((a,b)=> {return [b,...a]})
 
-    if (s.slice(0,mid) === reversed.join('')){
-        console.log("YES")
-        return "YES"
-    } else {
-        console.log("NO")
-        return "NO"
-    }
+    // let mid = Math.ceil(s.length / 2)
+    // let secHalf = s.slice(mid)
+    // let reversed = secHalf.split('').reduce((a,b)=> {return [b,...a]})
+    //
+    // if (s.slice(0,mid) === reversed.join('')){
+    //     console.log("YES")
+    //     return "YES"
+    // } else {
+    //     console.log("NO")
+    //     return "NO"
+    // }
 }
 
 
@@ -267,23 +268,32 @@ isBalanced("{{[[(())]]}}")  // yes
 isBalanced("ABCCBA")
 
 
-let map = {"{":"}", "[":"]", "(":")"}
+// let map = {"{":"}", "[":"]", "(":")"}
+//
+//
+// let isValid = function(s) {
+// let stack = [];
+//
+//   for (let i = 0; i < s.length; i++) {
+//       let item = s[i]
+//       if (map[item]) {
+//         stack.push(map[item]);
+//       } else {
+//       if (item !== stack.pop()) {
+//         console.log("false");
+//         return false;
+//       }
+//     }
+//   }
+//   console.log(stack.length === 0);
+//   return stack.length === 0;
+// };
 
 
-let isValid = function(s) {
-let stack = [];
-
-  for (let i = 0; i < s.length; i++) {
-      let item = s[i]
-      if (map[item]) {
-        stack.push(map[item]);
-      } else {
-      if (item !== stack.pop()) {
-        console.log("false");
-        return false;
-      }
-    }
-  }
-  console.log(stack.length === 0);
-  return stack.length === 0;
-};
+//  { { ( ) } }
+//  1 2 3 4 5 6
+//  1 2 3 3 2 1
+//
+//  { [ ( ] ) }
+//
+//  { { [ [ ( ( ) ) ] ] } }
