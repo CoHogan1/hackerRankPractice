@@ -7,6 +7,7 @@ function superDigit(n, k) {
         return parseInt(n)
     }
     let total = 0
+
     n.split('').forEach((item, index)=>{
         total += parseInt(item)
     })
@@ -17,3 +18,7 @@ function superDigit(n, k) {
 
 
 superDigit(one, two)
+
+let g = "g"
+
+console.log(g.length);

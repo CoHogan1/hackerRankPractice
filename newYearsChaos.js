@@ -1,42 +1,25 @@
-// the q is an out of ordered Array
+let cho  = [2,1,5,3,4] // 3
+let cho2 = [2,5,1,3,4] // too chaotic
 
-let tes = [1,2,3,5,4,6,7,8]
-//         0,1,2,3,4,5,6,7
+let cra = [1,2,5,3,7,8,6,4]
 
-let cho = [4,1,2,3,5,6,7,8]
-
-function minimumBribes(q) {
-    let bribes = 0
-    q.forEach((item, index)=>{
-        if (item - (item + 1) > 2){
-            console.log("Too chaotic");
-            return "Too chaotic"
+function minimumBribes(q){
+    let brib = 0
+    let copy = q.slice()
+    copy.forEach((item, index)=>{
+        if (copy[index] - index > 3){
+            console.log("Too Chaotic")
+            return "Too Chaotic"
+        }
+        if (copy[index] > copy[index + 1]){
+            [copy[index], copy[index + 1]] = [copy[index + 1], copy[index]]
+            brib++
         }
     })
-    q.forEach((item,index) =>{
-        if(q[index] > q[index + 1]){
-            console.log(item, q[index], q[index + 1], " comparison")
-            bribes++
-        }
+    console.log(brib)
+    return brib
 
-    })
-    console.log(bribes, " here ")
-    return bribes
 }
-
-// minimumBribes(tes)
-// minimumBribes(cho)
-//minimumBribes([2,1,5,3,4]) // 3 too chao
-
-
-function test(arr){
-    let copy = [...arr].sort()
-
-
-    arr.forEach((item, index)=>{
-        let comp = arr.sort().indexOf(item)
-        console.log(comp);
-    })
-}
-
-test([2,1,5,3,4])
+minimumBribes(cho)
+minimumBribes(cho2)
+minimumBribes(cra)
