@@ -18,7 +18,3 @@ function superDigit(n, k) {
 
 
 superDigit(one, two)
-
-let g = "g"
-
-console.log(g.length);
