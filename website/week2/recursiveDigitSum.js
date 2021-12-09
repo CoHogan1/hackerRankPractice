@@ -1,34 +1,19 @@
 let one = "9875"
 let two = 4
-
-// this may be working.
+// first try
 function superDigit(n, k) {
-    let num = Math.pow(n,k).toString()
-    num.split('').reduce((a,b)=> { return a + b})
-    console.log(num, " after reduced");
+    let total = n.split('').reduce((a,b)=> {return parseInt(a) + parseInt(b)}) // num
+    total = total * k // num
+    let string = total.toString()
+    console.log(string, " this");
 
-    // while ( num.length > 1 ) {
-    //     num.split('').reduce((a,b)=> { return a + b})
-    //     console.log(num)
-    //     if( num.length === 1){
-    //         return num
-    //     }
-    // }
-
-    return num
-
-
-
-    // if (n.length === 1){
-    //     console.log(n);
-    //     return parseInt(n)
-    // }
-    // let total = 0
-    // n.split('').forEach((item, index)=>{
-    //     total += parseInt(item)
-    // })
-    // let next = (total * k).toString()
-    // superDigit(next, 1)
+    while (string.length > 1){
+        let newTotal = string.split('').reduce((a,b)=>{return parseInt(a) + parseInt(b)})
+        let newString = newTotal.toString()
+        string = newString
+        //console.log(string," this")
+    }
+    return string
 }
 
 
