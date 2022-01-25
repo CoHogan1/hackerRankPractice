@@ -27,20 +27,23 @@ let sec = [4,1,2,3,4,1,20,30,40,100,200]
 function maxMin(k, arr) {
     let copy = arr.sort()
 
-    let i, length = copy.length, min = Number.MAX_VALUE
+    console.log(copy, rev);
 
-    for (let i = 0; i < length - k + 1; i++) {
-        let diff = copy[i + k -1] - copy[i]
-        if (diff < min){
-            min = diff
-        }
-    }
-
-    console.log(min)
-    return min
+    // let length = copy.length, min = Number.MAX_VALUE
+    //
+    //
+    // for (let i = 0; i < length - k + 1; i++) {
+    //     let diff = copy[i + k -1] - copy[i]
+    //     console.log(diff, " diff");
+    //     if (diff < min){
+    //         min = diff
+    //     }
+    // }
+    // console.log(min)
+    // return min
 }
 
 
 
-maxMin(int,nums)
-maxMin(two,sec)
+maxMin(int,nums, " here")
+maxMin(two,sec, " here")

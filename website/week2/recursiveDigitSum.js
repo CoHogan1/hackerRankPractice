@@ -5,7 +5,7 @@ function superDigit(n, k) {
     let total = n.split('').reduce((a,b)=> {return parseInt(a) + parseInt(b)}) // num
     total = total * k // num
     let string = total.toString()
-    console.log(string, " this");
+    //console.log(string, " this");
 
     while (string.length > 1){
         let newTotal = string.split('').reduce((a,b)=>{return parseInt(a) + parseInt(b)})
@@ -19,3 +19,18 @@ function superDigit(n, k) {
 
 superDigit(one, two)
 superDigit("148",3)
+
+
+const fooBarr = (n, k) => {
+
+    if(n.length === 1) {
+        return n
+    }
+
+    let sum = 0
+    for(const i of n) {
+        sum += parseInt(i)
+    }
+
+    return superDigit((sum * k).toString(), 1)
+}
