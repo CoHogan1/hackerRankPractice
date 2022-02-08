@@ -1,11 +1,16 @@
 function staircase(n) {
-    let copy = n
-    let hash = "#"
-    let space = " "
-    for (let i = 1; i < n + 2; i++) {
-        console.log(space.repeat(copy) + hash.repeat(i))
-        copy--
-    }
+    let copy = "x".repeat(n)
+    let count = n + 1
+    copy.split('').forEach((item, index)=>{
+        console.log(index +1, count);
+        count--
+        return " ".repeat(count) + "#".repeat(index + 1)
+    })
 }
 
-staircase(4)
+console.log(staircase(4))
+
+
+
+// console.log((" ".repeat(copy)+ "#".repeat(count)))
+// return (" ".repeat(copy)+ "#".repeat(count))

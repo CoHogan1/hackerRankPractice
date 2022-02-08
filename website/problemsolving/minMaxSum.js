@@ -9,3 +9,4 @@ function minMax(list){
     return (sum - copy[copy.length -1]) , (sum - copy[0])
 }
 minMax(arr)
+minMax([1,2,3,4,5])

@@ -22,3 +22,16 @@ const convert = (str) => {
 console.log(convert(test1))
 console.log(convert(test2))
 console.log(convert(test3))
+
+
+const today = new Date(2016, 7, 7)
+// undefined
+const tomorrow = new Date(2016, 7, 8)
+console.log(today, tomorrow);
+// undefined
+console.log(tomorrow >= today)
+// true
+console.log(today <= tomorrow)
+// true
+console.log(today == tomorrow)
+// false
