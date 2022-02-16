@@ -24,7 +24,7 @@ function pageTurner(n, p){
     let backFlip = Math.floor((n/2)-frontFlip);
 
     let result = Math.min(frontFlip, backFlip);
-    console.log(result);
+
     return result;
 }
 
