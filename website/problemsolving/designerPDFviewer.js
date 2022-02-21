@@ -31,6 +31,6 @@ function designerPdfViewer(h, word) {
     return Math.max(...height) * word.length
 }
 
-console.log(designerPdfViewer(test, "torn"))
-console.log(designerPdfViewer(tes2, 'abc'))
-console.log(designerPdfViewer(thre, 'zaba'))
+// console.log(designerPdfViewer(test, "torn"))
+// console.log(designerPdfViewer(tes2, 'abc'))
+// console.log(designerPdfViewer(thre, 'zaba'))
