@@ -6,18 +6,13 @@ function isBalanced(s) {
         s = s.replace('()', '')
         s = s.replace('{}', '')
         s = s.replace('[]', '')
-        console.log(s);
     }
-    if (s.length === 0){
-        return "YES"
-    } else {
-        return "NO"
-    }
+    return s.length == 0 ? "YES" : "NO"
 }
 
-console.log(isBalanced('{[()]}'))
-console.log(isBalanced('{[(])} '))
-console.log(isBalanced('{{[[(())]]}} '))
+console.log(isBalanced('{[()]}'),"yes")
+console.log(isBalanced('{[(])} '),'no')
+console.log(isBalanced('{{[[(())]]}}'), 'yes')
 
 //
 // let sam = '1234554321'
