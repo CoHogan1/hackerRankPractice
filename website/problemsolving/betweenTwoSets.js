@@ -1,4 +1,4 @@
-// There will be two arrays of integers. Determine all integers that satisfy the 
+// There will be two arrays of integers. Determine all integers that satisfy the
 // following two conditions:
 //
 // The elements of the first array are all factors of the integer being considered
@@ -18,25 +18,19 @@
 
 
 function getTotalX(a, b) {
-    let count = 0
-    let ans = 0
+    let validCount = 0;
 
-    // while (count > 0) {
-    //     console.log("running  right");
-    //     if (a[0] % count === 0 & a[1] % count === 0){
-    //         console.log(count, "here");
-    //         count = -1
-    //         return count
-    //
-    //     }
-    //     if (count > 10){
-    //         count = -1
-    //         return count
-    //     }
-    //
-    // }
-    console.log("end")
+    for (let x = 1; x <= 100; x++) {
+        if (a.every(int => (x % int == 0))) {
+            if (b.every(int => (int % x == 0))) {
+                validCount++;
+            }
+        }
+    }
+
+    return validCount;
+
 }
 
 
-getTotalX([2,6],[24,36])
+console.log(getTotalX([2,6],[24,36]))
