@@ -27,6 +27,12 @@ function contacts(queries){
     return [...ans]
 }
 
+
+// 5 of 15   [0]
+//
+
+// get items
+
 // class Node{
 //     constructor(char){
 //         this.char = char;
