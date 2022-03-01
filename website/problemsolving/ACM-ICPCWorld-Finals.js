@@ -1,23 +1,22 @@
 
 function acmteams(topic){
-    let memo = []
-    topic.forEach((str, index)=>{
+    let skills = []
+    let test = topic.split(' ')
 
-        // let temp = []
-        // str.split('').map((e, i)=>{
-        //     if (e === '1'){
-        //         temp.push(i)
-        //     }
-        // })
-        // memo.push(temp)
+    // for (let a = 0; a < topic.length; a++) {
+    //     for (let z = 0; z < topic[a].length; z++){
+    //         console.log(topic[a][a], topic[z][z])
+    //     }
+    // }
 
-    })
+
+    return 'IDK man'
     //[ [ 0, 2, 4 ], [ 0, 1, 2, 3 ], [ 3 ] ]
 
-    console.log(memo)
 }
 
-console.log(acmteams(['10101','11110','00010']))
+//console.log(acmteams(['10101','11110','00010']))
+console.log(acmteams(['10101','11100','11010','00101']))
 
 
 // let x = Array.from(Array(10).keys())
@@ -37,3 +36,12 @@ console.log(acmteams(['10101','11110','00010']))
 // t2 (1,3) [1,3,4,5]
 
 // t3 (2,3) [1,2,3,4]
+
+
+// arr.len =  number of teams
+// arr[i] =  number of topics
+
+// get each teams info.
+
+// t1 = arr[0] = 10101
+//               0 2 4
