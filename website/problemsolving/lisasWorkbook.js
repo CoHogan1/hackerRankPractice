@@ -3,31 +3,44 @@
 // only last page can contain < k promlems.
 function workBook(n,k,arr){
     //let totalProblems = arr.reduce((a,b) => a + b)
-    let ans = []
+    let special = 0
+    let page = 0
+    let chapters = 1
+    let book = []
 
-    arr.forEach((p,i)=>{
-        let page = Math.ceil(p / k)
-        ans.push(page)
+    for (let i = 0; i < arr.length; i++) {
+        let q = 0
+        while(q < arr[i]){
+            book.push([page, q])
+            q++
+            if (q >= k){ page++}
+            if (q < 0 || q > 11){ break }
+        }
+    }
 
-    })
-    let count = 1
-
-    // [2,1,2,1,4]
-
-    ans.forEach((d,i)=>{
-
-
-    })
-
-
-
+    console.log(book);
 
 
+
+
+        // see if arr[i] > 3
+        // if so push 3 problems to page 1
+        // page++
+        //arr[i] - k
+
+        // see if arr[i] > 3
+        // repeat step 1
+
+        // if not
+        // push remainder to arr
+        // page++
+        // break
+    console.log(calc);
 
     return 'IDK'
 }
 console.log(workBook(5,3,[4,2,6,1,10]), 4)
-// [ page, problems]
+
 
 // c1, page 1, 3 problems, 1,2,3  **
 // c1, page 2, 1 promlems, 4
@@ -43,3 +56,31 @@ console.log(workBook(5,3,[4,2,6,1,10]), 4)
 // c5, page 8, 3 problems, 4,5,6
 // c5, page 9, 3 problems, 7,8,9  **
 // c5, page10, 1 problems, 10     **
+
+
+
+// [ 1, 3, 1 ], [ 2, 1, 0 ], [ 3, 2, 0 ], [ 4, 3, 1 ], [ 5, 3, 1 ],
+// [ 6, 1, 0 ], [ 7, 3, 1 ], [ 8, 3, 1 ], [ 9, 3, 1 ], [ 10, 1, 0 ]
+
+
+
+
+
+// for (let i = 0; i < arr.length; i++) {
+//     while (arr[i] > 0){
+//
+//         if (arr[i] - k >= 0){
+//             arr[i] -= k
+//             test.push([page, k, 1])
+//             page++
+//
+//         } else {
+//             test.push([page, arr[i],0])
+//             arr[i] = 0
+//             page++
+//         }
+//
+//         if (arr[i] < 0 || arr[i] > 11){ break }
+//     }
+// }
+// console.log(test)
