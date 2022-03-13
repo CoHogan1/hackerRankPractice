@@ -1,7 +1,3 @@
-
-
-
-
 function migratoryBirds(arr) {
     let memo = {}
 
