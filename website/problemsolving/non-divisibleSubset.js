@@ -1,4 +1,3 @@
-
 function nonD(k,s){
     let factA = Array(k).fill(0)
 

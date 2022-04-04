@@ -1,27 +1,18 @@
 
 function fairRations(B){
-    let copy = B.slice()
-    let distCount = 0
+    let distributions = 0
 
-    copy.forEach((num, ind) => {
-        if (num % 2 != 0){// not even.
-
+    B.forEach((per, ind)=>{
+        if (per % 2 != 0){ // odd
+            B[ind]++
+            B[ind + 1]++
+            distributions += 2
         }
     })
+    console.log(B, " end result")
 
-
-
-
-
-
-
-
-
-
-    return `Yes`
+    return distributions
 }
-console.log(fairRations([4,5,7,8]))
 
-let x = [1,2]
-
-console.log(x.every(a => a % 2 === 0))
+console.log(fairRations([4,5,6,7]))
+console.log(fairRations([2,3,4,5,6]),4)
