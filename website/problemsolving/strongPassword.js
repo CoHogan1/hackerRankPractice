@@ -4,10 +4,13 @@
 // one special letter.
 
 function minimumNumber(n, password){
-    
+    // let arr = [/[!@#$%^&*()_+]/,/[0-9]/,/[A-Z]/,/[a-z]/]
+    //     .map(c => !c.test(password))
+    //     .filter(Boolean).length
+
     let arr = [/[!@#$%^&*()_+]/,/[0-9]/,/[A-Z]/,/[a-z]/]
-        .map(c => !c.test(password))
-        .filter(Boolean).length
+        .filter(c => !c.test(password)).length
+
 
     return Math.max(arr, 6 - n)
 }
