@@ -10,13 +10,13 @@ function separateNumbers(s) {
                 break
             }
             if (test === s) {
-                return `Yes ${n}`
-
+                console.log(`YES ${n}`)
+                return
             }
         }
 
     }
-    return "No"
+    console.log("NO")
 }
 
 console.log(separateNumbers('99910001001'))
