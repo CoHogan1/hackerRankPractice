@@ -1,7 +1,7 @@
 function missingNumbers(arr, brr){
     for (var i = 0; i < arr.length; i++) {
         brr.splice(brr.indexOf(arr[i]), 1)
-        console.log(brr);
+        console.log(brr)
     }
     let ans = [...new Set(brr)]
     return ans
