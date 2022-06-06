@@ -55,7 +55,32 @@ console.log(mergeHelp([5,4,3,2,1]), "mierge");
 
 
 // mergesort vs quicksort.
-//
+//  quck sort selects a value to be the pivot
+// merge sort gets the middle element. more or less
+
+
+function sort2(left, right){
+    const arr = []
+
+    while (left.length && right.length){
+        if (left[0] < right[0]){
+            arr.push(left.shift())
+        } else {
+            arr.push(right.shift())
+        }
+    }
+     return arr.concat(left.slice()).concat(right.slice())
+}
+
+function merge2(arr){
+    if (arr.length <= 1){ return arr }
+    let mid = Math.ceil(arr.length / 2)
+    let left = arr.slice(0, mid)
+    let right = arr.slice(mid)
+    return sort2(merge2(left), merge2(right))
+}
+
+console.log(merge2([5,4,3,2,1]));
 
 
 
@@ -71,53 +96,3 @@ console.log(mergeHelp([5,4,3,2,1]), "mierge");
 
 
 // merge sort.
-
-function sort2(left, right){
-    const arr = []
-
-    while (left.length && right.length){
-        if (left[0] < right[0]){
-            arr.push(left.shift())
-        } else {
-            arr.push(right.shift())
-        }
-    }
-    return arr.concat(left.slice(), right.slice())
-}
-
-
-function merge2(arr){
-    if (arr.length <=1){ return arr }
-    let mid = Math.ceil(arr.length / 2)
-    let left = arr.slice(0, mid)
-    let right = arr.slice(mid)
-
-    return sort2(merge2(left), merge2(right))
-}
-
-console.log(merge2([5,4,6,3,7,2,8,1,9,0]));
-
-
-// merge3
-
-function sort3(left, right){
-    const arr = []
-    while(left.length && right.length){
-        if (left[0] < right[0]){
-            arr.push(left.shift())
-        } else {
-            arr.push(right.shift())
-        }
-    }
-    return arr.concat(left.slice()).concat(right.slice())
-}
-
-function merge3(arr){
-    if (arr.length === 1){ return arr }
-    let mid = Math.ceil(arr.length / 2)
-    let left = arr.slice(0, mid)
-    let right = arr.slice(mid)
-    return sort3(merge3(left), merge3(right))
-}
-
-console.log(merge3([0,5,3,1]));
