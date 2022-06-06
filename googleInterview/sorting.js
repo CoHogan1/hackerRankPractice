@@ -58,21 +58,19 @@ console.log(mergeHelp([5,4,3,2,1]), "mierge");
 //  quck sort selects a value to be the pivot
 // merge sort gets the middle element. more or less
 
-
-function sort2(left, right){
+function sort2(left, right) {
     const arr = []
-
-    while (left.length && right.length){
+    while(left.length && right.length){
         if (left[0] < right[0]){
             arr.push(left.shift())
         } else {
             arr.push(right.shift())
         }
     }
-     return arr.concat(left.slice()).concat(right.slice())
+    return arr.concat(left.slice()).concat(right.slice())
 }
 
-function merge2(arr){
+function merge2(arr) {
     if (arr.length <= 1){ return arr }
     let mid = Math.ceil(arr.length / 2)
     let left = arr.slice(0, mid)
@@ -80,19 +78,4 @@ function merge2(arr){
     return sort2(merge2(left), merge2(right))
 }
 
-console.log(merge2([5,4,3,2,1]));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// merge sort.
+console.log(merge2([5,4,7,6,3,7,2,8,1,9,0]));
