@@ -3,7 +3,7 @@ function mergeSort(left, right){
     const array = []
     while(left.length && right.length){
         if (left[0] < right[0]){
-            array.push( left.shift())
+            array.push(left.shift())
         } else {
             array.push(right.shift())
         }
