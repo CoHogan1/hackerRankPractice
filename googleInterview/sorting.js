@@ -78,4 +78,22 @@ function merge2(arr) {
     return sort2(merge2(left), merge2(right))
 }
 
-console.log(merge2([5,4,7,6,3,7,2,8,1,9,0]));
+console.log(merge2([9,7,5,3,1,2,4,6,8,0]));
+
+
+function quick2(arr){
+    if (arr.length <= 1) { return arr }
+    let left = []
+    let right = []
+    let pivot = arr[0]
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < pivot){
+            left.push(arr[i])
+        } else {
+            right.push(arr[i])
+        }
+    }
+    return quick2(left).concat(pivot, quick2(right))
+}
+
+console.log(quick2([9,7,5,3,1,2,4,6,0,8]));
