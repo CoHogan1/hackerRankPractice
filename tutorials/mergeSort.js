@@ -21,4 +21,4 @@ const merge = (arr) => {
 
 let test = [1,3,5,7,9,0,8,6,4,2]
 
-console.log(merge(test))
+//console.log(merge(test))
