@@ -2,7 +2,7 @@
 
 const hash = (str, max) => {
     let hash1 = 0
-    for (var i = 0; i < str.length; i++) {
+    for (let i = 0; i < str.length; i++) {
         hash1 += str.charCodeAt(i)
     }
     return hash1 % max
