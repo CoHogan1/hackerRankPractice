@@ -1,3 +1,5 @@
+// find the min spanning tree in a full tree
+
 function getMST(graph, V){
     const selected = new Array(V).fill(false)
     selected[0] = true;
@@ -6,7 +8,7 @@ function getMST(graph, V){
     let edges = 0
 
     while (edges < V -1){
-        let min = Number.MAX_SAFE_INTEGER;
+        let min = Number.MAX_SAFE_INTEGER; // Infinity
         let x = 0, y = 0;
         for (let u = 0; u < V; u++) {
             // if the vertex is already selected
