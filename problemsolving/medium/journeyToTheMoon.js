@@ -11,9 +11,26 @@ const buildGraph = (edges) => {
 }
 
 function journeyToTheMoon(n, astronaught){
+    if (astronaught.length < 2){ return 0 }
+
     const graph = buildGraph(astronaught)
-    console.log(graph);
+    let visited  // set vs array
+    let start = graph[0]
+
+    let stack = [ start ]
+
+    while(stack.length != 0){
+        let curr = stack.pop()
+        visited.add(curr)
+
+
+    }
+
+
 
 }
 
-journeyToTheMoon(4,[[1,2],[2,3]])
+//journeyToTheMoon(4,[[1,2],[2,3]])
+
+
+// 7 6 4 3 1

@@ -76,8 +76,8 @@ graph.addEdge(7, 10)
 
 graph.addEdge(10, 11)
 
-// graph.dfsTraversal(0)
-// console.log(graph.result);
+graph.dfsTraversal(0)
+console.log(graph.result);
 
 // [
 //     0, 1,  3,  6, 9,
@@ -86,7 +86,7 @@ graph.addEdge(10, 11)
 // ]
 
 
-graph.dfsIterative(0)
+//graph.dfsIterative(0)
 
 //[
 //   0, 4, 7, 10, 11,
