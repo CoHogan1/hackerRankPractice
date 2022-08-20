@@ -122,3 +122,9 @@ console.log(findVal(a, d));
 //     next: SinglyLinkedListNode { data: 7, next: null }
 //   }
 // }
+
+
+// Node {
+//     data: 20,
+//     next: null
+// }
