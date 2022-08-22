@@ -115,16 +115,23 @@ const findVal = (head, val) => {
 
 console.log(findVal(a, d));
 
-// SinglyLinkedListNode {
-//   data: 16,
-//   next: SinglyLinkedListNode {
-//     data: 13,
-//     next: SinglyLinkedListNode { data: 7, next: null }
-//   }
-// }
 
+// Node {
+//     data: 10,
+//     next:
+// }
 
 // Node {
 //     data: 20,
-//     next: null
+//     next:
+// }
+
+// Node {
+//     data: 30,
+//     next:
+// }
+
+// Node {
+//     data: 40,
+//     next:
 // }
