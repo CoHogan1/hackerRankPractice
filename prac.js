@@ -68,4 +68,16 @@ function dfs(start, visited = new Set()) {
     }
 }
 
-dfs('PHX')
+//dfs('PHX')
+
+
+var inorderTraversal = function(root) {
+    console.log("it count");
+    if (root === null){ return }
+    inrderTraversal(root.left)
+    conosle.log(root.val)
+    inorderTraversal(root.right)
+
+};
+
+console.log(inorderTraversal(1,null,2,3))
