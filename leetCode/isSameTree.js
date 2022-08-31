@@ -4,4 +4,19 @@ var isSameTree = function(p, q) {
     return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
 };
 
-// recursion. lol 
+// recursion. lol
+
+
+let x = {
+    val: null,
+    left: null,
+    right: "Bob"
+}
+
+if (!x.val){
+    console.log("anything");
+}
+if(!x.val){ console.log("something") }
+
+
+console.log("Hi");
