@@ -60,29 +60,61 @@ let longestCommonPrefix = function(strs) {
 //     169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529,
 //     576, 625, 676, 729, 784, 841, 900, 961 }
 
-function preOt(head){
-    if (head === null) return;
-    preOt(head.left)
-    left.push(head.val)
-    preOt(head.right)
-}
+// function preOt(head){
+//     if (head === null) return;
+//     preOt(head.left)
+//     left.push(head.val)
+//     preOt(head.right)
+// }
+//
+// function postO(head){
+//     if (head === null) return;
+//     postO(head.left)
+//     postOt(head.right)
+//     right.push(head.val)
+// }
+//     let left = []
+//     let right = []
+//
+// var isSymmetric = function(root) {
+//     preOt(head)
+//     postO(head)
+//
+//     if(right.length != left.length) return false;
+//     for (let i = 0; i < left.length; i++){
+//         if (left[i] != right[i]) return false
+//     }
+//     return true
+// };
 
-function postO(head){
-    if (head === null) return;
-    postO(head.left)
-    postOt(head.right)
-    right.push(head.val)
-}
-    let left = []
-    let right = []
 
-var isSymmetric = function(root) {
-    preOt(head)
-    postO(head)
+let root = [3,9,20,null,null,15,7]
 
-    if(right.length != left.length) return false;
-    for (let i = 0; i < left.length; i++){
-        if (left[i] != right[i]) return false
+let nodes = []
+
+var maxDepth = function(root) {
+    if (!root){ return }
+    nodes.push(root.val)
+
+    if(root.right){
+        maxDepth(root.right)
+
     }
-    return true
+    if (root.left){
+        maxDepth(root.left)
+
+    }
+
+
+
+    return nodes
 };
+
+
+console.log(maxDepth(root));
+
+
+// if (!root) return null;
+// let max = Math.max(maxDepth(root.left), maxDepth(root.right))
+// console.log(maxDepth(root.left), " this");
+// return max + 1
