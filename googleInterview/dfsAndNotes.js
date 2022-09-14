@@ -34,3 +34,30 @@ bst.right.right = new Node(42);
 //   14     35
 //  /  \   /  \
 // 10 19  31  42
+
+
+
+// function test(val, arr = [] ){
+//     if (val === 0) return arr
+//     arr.push(val)
+//
+//     return test(val -1, arr)
+// }
+//
+// console.log(test(11));
+
+
+
+const dfsRecursiveInOrder = (node, arr = []) => {
+    console.log(node.val, "here", arr)
+    if(!node) return;
+
+    if(node.left) dfsRecursiveInOrder(node.left, arr);
+
+    arr.push(node.val);
+
+    if(node.right) dfsRecursiveInOrder(node.right, arr);
+    return arr;
+}
+
+console.log(dfsRecursiveInOrder(bst));
