@@ -1,26 +1,11 @@
-function preOt(head){
-    if (head === null) return;
-    preOt(head.left)
-    left.push(head.val)
-    preOt(head.right)
-}
-
-function postO(head){
-    if (head === null) return;
-    postO(head.left)
-    postOt(head.right)
-    right.push(head.val)
-}
-let left = []
-let right = []
-
 var isSymmetric = function(root) {
-    preOt(head)
-    postO(head)
-
-    if(right.length != left.length) return false;
-    for (let i = 0; i < left.length; i++){
-        if (left[i] != right[i]) return false
-    }
-    return true
+    if(!root) return true;
+    return dfs(root.left, root.left)
 };
+
+const dfs = (left, right) => {
+    if (!left && !right) return true;
+    if (!left || !right) return false;
+    if (left.val != right.val) return false;
+    return dfs(left.left, right.right) && dfs(left.right, right.left)
+}

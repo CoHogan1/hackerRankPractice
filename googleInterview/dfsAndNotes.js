@@ -47,9 +47,7 @@ bst.right.right = new Node(42);
 // console.log(test(11));
 
 
-
 const dfsRecursiveInOrder = (node, arr = []) => {
-    console.log(node.val, "here", arr)
     if(!node) return;
 
     if(node.left) dfsRecursiveInOrder(node.left, arr);
@@ -57,7 +55,27 @@ const dfsRecursiveInOrder = (node, arr = []) => {
     arr.push(node.val);
 
     if(node.right) dfsRecursiveInOrder(node.right, arr);
+
     return arr;
 }
 
-console.log(dfsRecursiveInOrder(bst));
+//console.log(dfsRecursiveInOrder(bst));
+
+
+var rangeSumBST = function(root, low, high) {
+    let sum = 0
+    dfs(root)
+    return sum
+
+    function dfs(node){
+        if(!node) return;
+        if (node.val < low)  dfs(node.right);
+        if (node.val > high) dfs(node.left);
+
+        sum+= node.val
+        dfs(node.left)
+        dfs(node.right)
+    }
+};
+
+console.log(rangeSumBST([10,5,15,3,7,null,18]));
