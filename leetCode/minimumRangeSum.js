@@ -1,27 +1,18 @@
 var minDepth = function(root) {
-    if (!root) return 0;
+    if(!root) return 0;
+    let min = Infinity
 
+    dfs(root, 1)
+    return min
 
-    const search(node, l = 0, r = 0){
-        if (!node) return;
+    function dfs(node, depth){
+        if(!node) return 0;
 
-        if(node.left){
-             l++
-             search(node.left, l, r)
-        }
-        if (node.right){
-            r++
-            search(node.right, l, r)
+        if(!node.right && !node.left){
+            min = Math.min(min, depth)
         }
 
-    }
-    if (root.left){
-        search(root.left)
-    }
-
-    if (root.right){
-        search(root.right)
+        dfs(node.left, depth +1)
+        dfs(node.right, depth +1)
     }
 };
-
-console.log(minDepth([3,9,20,null,null,15,7]))
