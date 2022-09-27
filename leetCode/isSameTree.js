@@ -5,18 +5,3 @@ var isSameTree = function(p, q) {
 };
 
 // recursion. lol
-
-
-let x = {
-    val: null,
-    left: null,
-    right: "Bob"
-}
-
-if (!x.val){
-    console.log("anything");
-}
-if(!x.val){ console.log("something") }
-
-
-console.log("Hi");
