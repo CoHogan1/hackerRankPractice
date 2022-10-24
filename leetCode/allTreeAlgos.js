@@ -39,3 +39,21 @@ var preorderTraversal = function(root) {
         if(node.right){dfs(node.right)}
     }
 };
+
+
+
+// breath first search.
+// 0(n) time and space = 0(n)
+function breathFirst(root){
+    if (root === null){ return [] }
+    const values = []
+    const queue = [root]
+
+    while(queue.length > 0){
+        const current = queue.shift()
+        values.push(current.val)
+        if(current.left ){ queue.push(current.left )}
+        if(current.right){ queue.push(current.right)}
+    }
+    return values
+}

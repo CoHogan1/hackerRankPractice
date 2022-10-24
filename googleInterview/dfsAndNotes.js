@@ -79,3 +79,61 @@ var rangeSumBST = function(root, low, high) {
 };
 
 console.log(rangeSumBST([10,5,15,3,7,null,18]));
+
+
+
+const dfs = (graph, source) => {
+    const stack = [ source ]; // stack deep
+    while (stack.length > 0){
+        const curr = stack.pop() //remove last
+        console.log(curr);
+        for (let neighabor of graph[curr]){
+            stack.push(neighabor)
+        }
+    }
+}
+
+const bfs = (graph, source) => {
+    const queue = [ source ]; // queue takes a breath
+    while(queue.lenght > 0){
+        const curr = queue.shift() // remove first
+        console.log(curr);
+        for (let neighabor of graph[curr]){
+            queue.push(neighabor)
+        }
+    }
+}
+
+
+function merge (left, right) {
+    if (!left) {
+        return right;
+    } else if (!right) {
+        return left;
+    } else if (left.val < right.val){
+        left.next = merge(left.next, right);
+        return left;
+    } else {
+        right.next = merge(left, right.next);
+        return right;
+    }
+}
+
+
+function helper(lists, start, end) {
+    if (start === end) {
+        return lists[start];
+    } else if (start < end) {
+        const mid = parseInt((start + end) / 2);
+        const left = helper(lists, start, mid);
+        const right = helper(lists, mid + 1, end);
+        return merge(left, right);
+    } else {
+        return null;
+    }
+
+}
+
+var mergeKLists = function(lists) {
+    return helper(lists, 0, lists.length - 1);
+};
