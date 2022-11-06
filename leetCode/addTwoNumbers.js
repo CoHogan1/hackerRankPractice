@@ -1,43 +1,31 @@
-function ListNode(val, next) {
-    this.val = (val===undefined ? 0 : val)
-    this.next = (next===undefined ? null : next)
-}
-let idk = [2,4,3]
-// 243
-let llone = new ListNode(idk[0], undefined)
-
-let ggg = [5,6,4]
-// 564
-let lltwo = new ListNode(ggg[0], undefined)
-
-
-for (let i = 1; i < idk.list; i++){
-    llone.next = new ListNode(idk[i], undefined)
-    lltwo.next = new ListNode(ggg[i], undefined)
-}
-
-
 var addTwoNumbers = function(l1, l2) {
-    let one = ''
-    let two = ''
-    let curr = l1
-    let head = l2
+    var List = new ListNode(0);
+    var head = List;
+    var sum = 0;
+    var carry = 0;
 
-    while(curr.next != undefined){
-        one += curr.val.toString()
-        two += head.val.toString()
-        curr = curr.next
-        head = head.next
+    while(l1!==null||l2!==null||sum>0){
+        // get l1 val, and add its value.
+        if(l1!==null){
+            sum = sum + l1.val;
+            l1 = l1.next;
+        }
+        // get l2 val and add it to its val.
+        if(l2!==null){
+            sum = sum + l2.val;
+            l2 = l2.next;
+        }
+
+        if(sum>=10){
+            carry = 1;
+            sum = sum - 10;
+        }
+        // add a node with sums current value.
+        head.next = new ListNode(sum);
+        head = head.next;
+
+        sum = carry;
+        carry = 0;
     }
-    const ans = parseInt(one) + parseInt(two)
-    const rev = ans.toString().split('').reverse()
-
-    let newll = new ListNode(rev[0], undefined)
-    let temp = newll
-    for (let i = 1; i < rev.length; i++){
-        temp.next = new ListNode(rev[i], undefined)
-        temp = temp.next
-    }
-    return newll
-
+    return List.next;
 };
