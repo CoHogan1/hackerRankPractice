@@ -6,5 +6,12 @@ function printLinkedList(head) {
     }
 }
 
+// 2 method
+function printLinkedList2(head) {
+    if (head === null) return;
+    console.log(head.data)
+    return printLinkedList(head.next)
+}
+
 
 // just print a linked list data.

@@ -1,26 +1,40 @@
-// Travis Dowdy
-// Partners Group.
-// Jainaf 9 years.
-// Bapp
-// services team.
-// user issues and user requests.
-// snowflake - database??
+// how to get a job at accenture.
+// started out as a consulting company
+// changed to a world class consulting firm
+// Accenture, it deals primarily with consulting services.
 
-// Do I interact with the users personally ?
-// Located in Denver ?
-// 8 to 5 pm.
+// Internal Training: Why search for certificate programs or training?
+// Accenture employees have the benefit of excellent training programs that
+// build valuable skills. An emphasis on internal training gives entry-level
+// employees a significant opportunity to advance in their respective position.
+// The company wants to see its employees succeed.
 
 
-// employee table
+// When preparing for a job interview, you should ask yourself why a company should
+// hire you over someone else with similar qualifications. What is it that
+// makes you stand out above everyone else?
 
-// id             1 2 3 4 5
-// first name    john jane jack jane jane
-// last name     doe smith doe doe  smith
-// status        1    1    0    0    1
+// my main strength
+// consistency, teamwork, teaching?
 
-// second round, 3 to 3 1/2 hours. ???
+// my main weakness
+// detail oriented,
 
-// my sql snowflake
-console.log("is this working??");
+// why do I want to work for Accenture?
 
-console.log("Hullo");
+
+
+//  => my interview questions
+// How would you describe the company’s work culture?
+// What type of development method do you employ? (i.e. agile)
+
+// What qualities or characteristics have you seen in those
+// that have been successful in this role
+
+// Is this position a new role or a backfill? If it’s a new role,
+// what was the intention behind creating it?
+
+// What does success look like in the first 30, 60, and 90 days on the job?
+// How is performance measured in this role?
+
+// meta-verse ??
