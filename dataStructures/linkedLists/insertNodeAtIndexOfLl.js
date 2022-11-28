@@ -16,21 +16,36 @@ function insertNodeAtPosition(llist, data, position) {
     return llist
 }
 
+function insertNodeAtPosition2(llist, data, position) {
+    if (!llist) return { data };
+    let ind = 0
+    let curr = llist
 
-// function insertNodeAtPosition(llist, data, position) {
-    //     let curr = llist
-    //     let ind = -1
-    //     while(curr){
-        //         ind++
-        //         if (ind === position -1){
-            //             let oldData = curr.data
-            //             let temp = curr.next
-            //             let newNode = new SinglyLinkedListNode(data)
-            //             curr.next = newNode
-            //             newNode.next = temp
-            //             break
-            //         }
-            //         curr = curr.next
-            //     }
-            //     return llist
-            // }
+    while(ind < position -1){
+        ind++
+        curr = curr.next
+    }
+
+    let temp = curr.next
+    curr.next = { data }
+    curr.next.next = temp
+
+    return llist
+}
+
+
+function insertNodeAtPosition3(llist, data, position) {
+    const node = new SinglyLinkedListNode(data)
+    let current = llist
+
+    for (let i = 0; i < position - 1; i++) {
+        if (current.next) {
+            current = current.next
+        }
+    }
+    
+    node.next = current.next
+    current.next = node
+
+    return llist
+}

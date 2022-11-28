@@ -9,3 +9,13 @@ function reversePrint(llist) {
         console.log(stack.pop())
     }
 }
+
+function reversePrint2(llist) {
+    if (!llist) return;
+    let arr = []
+    while (llist){
+        arr.unshift(llist.data)
+        llist = llist.next
+    }
+    arr.map(x => console.log(x))
+}
