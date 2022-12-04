@@ -75,9 +75,3 @@
 
 
 // Raman Haran
-
-let y = 11
-let z = 1
-
-y = y.toString(2)
-z = z.toString(2)
